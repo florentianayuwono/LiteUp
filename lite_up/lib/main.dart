@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import './screens/entry_screen.dart';
-import './screens/home_screen.dart';
+import 'screens/flashcard_screen.dart';
 
 // Main entry of the application.
 void main() {

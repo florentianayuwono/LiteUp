@@ -6,18 +6,18 @@ import '../widgets/flashcard_widget.dart';
 import '../widgets/next_button.dart';
 
 /* 
-HomeScreen widget is stateful because it is our parent widget and therefore
+FlashcardScreen widget is stateful because it is our parent widget and therefore
 all the functions and variables will be in this widget. As a consequence, we
 will need to change the state of our widget.
 */
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class FlashcardScreen extends StatefulWidget {
+  const FlashcardScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<FlashcardScreen> createState() => _FlashcardScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _FlashcardScreenState extends State<FlashcardScreen> {
   List<Flashcard> flashcards = [
     Flashcard(title: flashcards_1[0][0], content: flashcards_1[0][1]),
     Flashcard(title: flashcards_1[1][0], content: flashcards_1[1][1])
