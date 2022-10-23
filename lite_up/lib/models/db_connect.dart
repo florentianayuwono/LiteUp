@@ -16,4 +16,9 @@ class DBconnect {
           'book': level.book
         }));
   }
+
+  Future<void> addBook(Book book) async {
+    http.post(url,
+        body: json.encode({'title': book.title, 'content': book.content}));
+  }
 }
