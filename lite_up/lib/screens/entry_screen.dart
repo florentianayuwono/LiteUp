@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lite_up/widgets/login_button.dart';
+import 'package:lite_up/widgets/signup_button.dart';
 import '../constants/style.dart';
 import '../constants/text.dart';
 import '../models/flashcard_model.dart';
@@ -32,7 +33,12 @@ class _EntryScreenState extends State<EntryScreen> {
             Container(
                 margin: const EdgeInsets.only(top: 122),
                 child: Image.asset('lib/assets/images/LiteUp_logo.png')),
-            const LoginButton()
+            Container(
+              margin: const EdgeInsets.only(top: 20),
+              child: const LoginButton()),
+            Container(
+              margin: const EdgeInsets.only(top: 20),
+              child: const SignUpButton())
           ])),
     );
   }

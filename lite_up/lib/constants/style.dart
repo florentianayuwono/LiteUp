@@ -7,6 +7,8 @@ const TextStyle flashcardAppBarTitle =
     TextStyle(color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold);
 const TextStyle loginButtonTextStyle =
     TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold);
+const TextStyle signUpButtonTextStyle =
+    TextStyle(color: deepOrange, fontSize: 16, fontWeight: FontWeight.bold);
 
 /* COLOR STYLE */
 const Color background = Color.fromARGB(255, 249, 240, 181);
