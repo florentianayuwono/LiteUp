@@ -62,7 +62,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 flashcardTitle: flashcards[index].title,
                 totalFlashcards: flashcards.length,
               ),
-              const Divider(color: skyBlue),
+              const Divider(color: deepOrange),
+              // Add some space
+              const SizedBox(height: 25),
+
             ],
           )),
 
