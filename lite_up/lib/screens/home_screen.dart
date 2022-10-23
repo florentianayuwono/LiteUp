@@ -32,14 +32,15 @@ class _HomeScreenState extends State<HomeScreen> {
 
       // Set the top app bar
       appBar: AppBar(
-        title: const Text('LiteUp'),
-        backgroundColor: background,
-        shadowColor: Colors.transparent,
+        title: const Text('Level 1 Flash Cards', style: flashcardTitle),
+        backgroundColor: white,
+        elevation: 0
       ),
 
       // Set the body of the app
       body: Container(
           width: double.infinity,
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Column(
             children: [
               // Add the flashcard widget
@@ -47,7 +48,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 indexAction: index,
                 flashcardTitle: flashcards[index].title,
                 totalFlashcards: flashcards.length,
-                )
+              ),
+              const Divider(color: skyBlue),
             ],
           )),
     );

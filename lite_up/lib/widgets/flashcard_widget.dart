@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../constants/style.dart';
 
 class FlashcardWidget extends StatelessWidget {
   const FlashcardWidget(
@@ -17,6 +18,11 @@ class FlashcardWidget extends StatelessWidget {
     return Container(
         alignment: Alignment.centerLeft,
         child: Text(
-            'Flashcard ${indexAction + 1}/$totalFlashcards: $flashcardTitle'));
+            'Flashcard ${indexAction + 1}/$totalFlashcards: $flashcardTitle',
+            style: const TextStyle(
+              fontSize: 24.0,
+              color: deepOrange,
+            ),
+            ));
   }
 }
