@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../constants/style.dart';
 import '../constants/text.dart';
 import '../models/flashcard_model.dart';
@@ -32,9 +33,9 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
       return;
     } else {
       setState(() {
-      // Increments the index to rebuild the app to show next flashcard
-      index++;
-    });
+        // Increments the index to rebuild the app to show next flashcard
+        index++;
+      });
     }
   }
 
@@ -46,7 +47,8 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
 
       // Set the top app bar
       appBar: AppBar(
-          title: const Text('Level 1 Flash Cards', style: flashcardAppBarTitle),
+          title: Text('Level 1 Flash Cards',
+              style: GoogleFonts.poppins(textStyle: appBarTitle)),
           backgroundColor: white,
           elevation: 0),
 
@@ -65,7 +67,6 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
               const Divider(color: deepOrange),
               // Add some space
               const SizedBox(height: 25),
-
             ],
           )),
 

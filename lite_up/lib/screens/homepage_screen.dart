@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../constants/style.dart';
 import '../constants/text.dart';
 import '../models/flashcard_model.dart';
 import '../widgets/flashcard_widget.dart';
+import '../widgets/levelcard_widget.dart';
 import '../widgets/login_button.dart';
 import '../widgets/next_button.dart';
 import '../widgets/signup_button.dart';
@@ -20,20 +22,34 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List<int> level = [1, 2, 3];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: const Text('Level 1 Flash Cards', style: flashcardAppBarTitle),
-          backgroundColor: white,
-          elevation: 0),
       body: Container(
           decoration: primaryBackground,
           alignment: Alignment.center,
-          child: Column(children: [
-            Container(
-                margin: const EdgeInsets.only(top: 122),
-                child: Image.asset('lib/assets/images/LiteUp_logo.png')),
+          child: Column(
+            children: [
+            Row(
+              children: [
+              const ImageIcon(AssetImage('lib/assets/images/LiteUp_logo.png'),
+                  size: 100),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Name Holder',
+                      style: GoogleFonts.poppins(textStyle: appBarTitle),
+                      textAlign: TextAlign.left),
+                  Text('Level 1',
+                      style: GoogleFonts.poppins(textStyle: levelTitle),
+                      textAlign: TextAlign.start)
+                ],
+              )
+            ]),
+            for (var i in level) Container(
+              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              child: LevelcardWidget(level: i))
           ])),
     );
   }
