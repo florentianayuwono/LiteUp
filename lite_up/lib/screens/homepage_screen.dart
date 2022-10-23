@@ -31,7 +31,9 @@ class _HomeScreenState extends State<HomeScreen> {
           alignment: Alignment.center,
           child: Column(
             children: [
-            Row(
+            Container(
+              margin: const EdgeInsets.only(left: 20, right: 20, top: 50),
+              child: Row(
               children: [
               const ImageIcon(AssetImage('lib/assets/images/LiteUp_logo.png'),
                   size: 100),
@@ -46,7 +48,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       textAlign: TextAlign.start)
                 ],
               )
-            ]),
+            ])),
             for (var i in level) Container(
               margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
               child: LevelcardWidget(level: i))
