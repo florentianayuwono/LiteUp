@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-const TextStyle flashcardTitle =
+const TextStyle flashcardAppBarTitle =
     TextStyle(color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold);
 
 const Color background = Color.fromARGB(255, 249, 240, 181);

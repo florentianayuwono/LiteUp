@@ -32,10 +32,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
       // Set the top app bar
       appBar: AppBar(
-        title: const Text('Level 1 Flash Cards', style: flashcardTitle),
-        backgroundColor: white,
-        elevation: 0
-      ),
+          title: const Text('Level 1 Flash Cards', style: flashcardAppBarTitle),
+          backgroundColor: white,
+          elevation: 0),
 
       // Set the body of the app
       body: Container(
@@ -52,6 +51,9 @@ class _HomeScreenState extends State<HomeScreen> {
               const Divider(color: skyBlue),
             ],
           )),
+
+          // Next button
+          floatingActionButton:
     );
   }
 }
