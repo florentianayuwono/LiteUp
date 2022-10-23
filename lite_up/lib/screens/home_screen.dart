@@ -3,6 +3,7 @@ import '../constants/style.dart';
 import '../constants/text.dart';
 import '../models/flashcard_model.dart';
 import '../widgets/flashcard_widget.dart';
+import '../widgets/next_button.dart';
 
 /* 
 HomeScreen widget is stateful because it is our parent widget and therefore
@@ -22,7 +23,20 @@ class _HomeScreenState extends State<HomeScreen> {
     Flashcard(title: flashcards_1[1][0], content: flashcards_1[1][1])
   ];
 
+  // Create an index to loop through flashcards
   int index = 0;
+
+  // Create a function to display the next flashcard
+  void nextFlashcard() {
+    if (index == flashcards.length - 1) {
+      return;
+    } else {
+      setState(() {
+      // Increments the index to rebuild the app to show next flashcard
+      index++;
+    });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,8 +66,12 @@ class _HomeScreenState extends State<HomeScreen> {
             ],
           )),
 
-          // Next button
-          floatingActionButton:
+      // Next button
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: NextButton(nextFlashcard: nextFlashcard),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
