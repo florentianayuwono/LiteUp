@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import './screens/entry_screen.dart';
 import './screens/home_screen.dart';
-
 
 // Main entry of the application.
 void main() {
@@ -20,6 +20,6 @@ class LiteUp extends StatelessWidget {
         // Remove the default debug banner from Flutter.
         debugShowCheckedModeBanner: false,
         // Set the homepage.
-        home: HomeScreen());
+        home: EntryScreen());
   }
 }

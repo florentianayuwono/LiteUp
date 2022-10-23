@@ -11,3 +11,9 @@ const Color softOrange = Color.fromARGB(255, 254, 189, 142);
 const Color deepYellow = Color.fromARGB(255, 255, 187, 1);
 const Color skyBlue = Color.fromARGB(255, 156, 197, 231);
 const Color white = Colors.white;
+
+const BoxDecoration primaryBackground = BoxDecoration(
+    gradient: LinearGradient(
+        begin: Alignment.topCenter,
+        end: Alignment.bottomCenter,
+        colors: [white, softOrange]));
