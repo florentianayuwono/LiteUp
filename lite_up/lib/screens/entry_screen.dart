@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:lite_up/widgets/login_button.dart';
 import '../constants/style.dart';
 import '../constants/text.dart';
 import '../models/flashcard_model.dart';
 import '../widgets/flashcard_widget.dart';
 import '../widgets/next_button.dart';
+import 'home_screen.dart';
 
 /* 
 EntryScreen widget is stateful because it is our parent widget and therefore
@@ -18,24 +21,19 @@ class EntryScreen extends StatefulWidget {
 }
 
 class _EntryScreenState extends State<EntryScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Set background color
-      backgroundColor: background,
-
-      // Set the body of the app
-      body: Center(
-          child: Container(
-              decoration: primaryBackground,
-              child: Center(
-                  child: Image.asset('lib/assets/images/LiteUp_logo.png')))),
-
-      // Next button
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      body: Container(
+          decoration: primaryBackground,
+          alignment: Alignment.center,
+          child: Column(children: [
+            Container(
+                margin: const EdgeInsets.only(top: 122),
+                child: Image.asset('lib/assets/images/LiteUp_logo.png')),
+            const LoginButton()
+          ])),
     );
   }
 }
