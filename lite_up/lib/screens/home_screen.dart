@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../constants/style.dart';
 import '../constants/text.dart';
 import '../models/flashcard_model.dart';
+import '../widgets/flashcard_widget.dart';
 
 /* 
 HomeScreen widget is stateful because it is our parent widget and therefore
@@ -26,12 +27,29 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // Set background color
       backgroundColor: background,
+
+      // Set the top app bar
       appBar: AppBar(
         title: const Text('LiteUp'),
         backgroundColor: background,
         shadowColor: Colors.transparent,
       ),
+
+      // Set the body of the app
+      body: Container(
+          width: double.infinity,
+          child: Column(
+            children: [
+              // Add the flashcard widget
+              FlashcardWidget(
+                indexAction: index,
+                flashcardTitle: flashcards[index].title,
+                totalFlashcards: flashcards.length,
+                )
+            ],
+          )),
     );
   }
 }
