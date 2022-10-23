@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import './screens/home_screen.dart';
+
 
 // Main entry of the application.
 void main() {
@@ -12,13 +14,12 @@ void main() {
 class LiteUp extends StatelessWidget {
   const LiteUp({Key? key}) : super(key: key);
 
-  @override 
+  @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      // Remove the default debug banner from Flutter.
-      debugShowCheckedModeBanner: false,
-      // Set the homepage.
-      home: HomeScreen()
-    );
+        // Remove the default debug banner from Flutter.
+        debugShowCheckedModeBanner: false,
+        // Set the homepage.
+        home: HomeScreen());
   }
 }
