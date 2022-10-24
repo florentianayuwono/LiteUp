@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 /* TEXT STYLE */
-const TextStyle flashcardAppBarTitle =
+const TextStyle appBarTitle =
     TextStyle(color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold);
+const TextStyle levelTitle = TextStyle(color: Colors.black, fontSize: 20);
+const TextStyle levelCardTitle =
+    TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold);
 const TextStyle loginButtonTextStyle =
     TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold);
 const TextStyle signUpButtonTextStyle =
@@ -29,4 +32,7 @@ const BoxDecoration primaryBackground = BoxDecoration(
     gradient: LinearGradient(
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
-        colors: [white, softOrange]));
+        colors: [white, background]));
+
+BoxDecoration unlockedCardBackground =
+    BoxDecoration(color: softOrange, borderRadius: BorderRadius.circular(25));

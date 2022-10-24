@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../constants/style.dart';
 import '../constants/text.dart';
 import '../models/flashcard_model.dart';
@@ -6,18 +7,18 @@ import '../widgets/flashcard_widget.dart';
 import '../widgets/next_button.dart';
 
 /* 
-HomeScreen widget is stateful because it is our parent widget and therefore
+FlashcardScreen widget is stateful because it is our parent widget and therefore
 all the functions and variables will be in this widget. As a consequence, we
 will need to change the state of our widget.
 */
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+class FlashcardScreen extends StatefulWidget {
+  const FlashcardScreen({Key? key}) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<FlashcardScreen> createState() => _FlashcardScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _FlashcardScreenState extends State<FlashcardScreen> {
   List<Flashcard> flashcards = [
     Flashcard(title: flashcards_1[0][0], content: flashcards_1[0][1]),
     Flashcard(title: flashcards_1[1][0], content: flashcards_1[1][1])
@@ -32,9 +33,9 @@ class _HomeScreenState extends State<HomeScreen> {
       return;
     } else {
       setState(() {
-      // Increments the index to rebuild the app to show next flashcard
-      index++;
-    });
+        // Increments the index to rebuild the app to show next flashcard
+        index++;
+      });
     }
   }
 
@@ -46,7 +47,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
       // Set the top app bar
       appBar: AppBar(
-          title: const Text('Level 1 Flash Cards', style: flashcardAppBarTitle),
+          title: Text('Level 1 Flash Cards',
+              style: GoogleFonts.poppins(textStyle: appBarTitle)),
           backgroundColor: white,
           elevation: 0),
 
@@ -65,7 +67,6 @@ class _HomeScreenState extends State<HomeScreen> {
               const Divider(color: deepOrange),
               // Add some space
               const SizedBox(height: 25),
-
             ],
           )),
 

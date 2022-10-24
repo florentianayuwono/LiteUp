@@ -7,7 +7,7 @@ import '../constants/text.dart';
 import '../models/flashcard_model.dart';
 import '../widgets/flashcard_widget.dart';
 import '../widgets/next_button.dart';
-import 'home_screen.dart';
+import 'flashcard_screen.dart';
 
 /* 
 EntryScreen widget is stateful because it is our parent widget and therefore

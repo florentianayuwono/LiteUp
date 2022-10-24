@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "705206997415",
+    "firebase_url": "https://liteup-3380e-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "liteup-3380e",
+    "storage_bucket": "liteup-3380e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:705206997415:android:22890182959dcdf0756682",
+        "android_client_info": {
+          "package_name": "com.incognito.lite_up"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "705206997415-7vr6ali6fcort19dt5q73646afk166dj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZCXlFGIJLe0_0J0vZTcWrjWd5effyrXc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "705206997415-7vr6ali6fcort19dt5q73646afk166dj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

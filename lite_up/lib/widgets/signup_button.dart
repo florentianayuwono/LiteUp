@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../constants/style.dart';
-import '../screens/home_screen.dart';
+import '../screens/flashcard_screen.dart';
+import '../screens/homepage_screen.dart';
 
 class SignUpButton extends StatelessWidget {
   const SignUpButton({Key? key}) : super(key: key);

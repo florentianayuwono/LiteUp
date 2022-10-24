@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import './screens/entry_screen.dart';
-import './screens/home_screen.dart';
+import 'models/book_model.dart';
+import 'screens/flashcard_screen.dart';
+import './models/db_connect.dart';
 
 // Main entry of the application.
 void main() {
+  var database = DBconnect();
+  database.addBook(Book(title: 'Oliver Twist', content: 'Hello World'));
   runApp(
     // Render the LiteUp app.
     const LiteUp(),
   );
+  database.addBook(Book(title: 'Oliver Twist', content: 'Hello World'));
 }
 
 // Create the LiteUp widget.
