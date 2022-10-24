@@ -22,37 +22,39 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List<int> level = [1, 2, 3];
+  List<int> level = [1, 2, 3, 4, 5];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+        body: SingleChildScrollView(
+      child: Container(
           decoration: primaryBackground,
           alignment: Alignment.center,
-          child: Column(
-            children: [
+          child: Column(children: [
             Container(
-              margin: const EdgeInsets.only(left: 20, right: 20, top: 50),
-              child: Row(
-              children: [
-              const ImageIcon(AssetImage('lib/assets/images/LiteUp_logo.png'),
-                  size: 100),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Name Holder',
-                      style: GoogleFonts.poppins(textStyle: appBarTitle),
-                      textAlign: TextAlign.left),
-                  Text('Level 1',
-                      style: GoogleFonts.poppins(textStyle: levelTitle),
-                      textAlign: TextAlign.start)
-                ],
-              )
-            ])),
-            for (var i in level) Container(
-              margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-              child: LevelcardWidget(level: i))
+                margin: const EdgeInsets.only(left: 20, right: 20, top: 50),
+                child: Row(children: [
+                  const ImageIcon(
+                      AssetImage('lib/assets/images/LiteUp_logo.png'),
+                      size: 100),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Name Holder',
+                          style: GoogleFonts.poppins(textStyle: appBarTitle),
+                          textAlign: TextAlign.left),
+                      Text('Level 1',
+                          style: GoogleFonts.poppins(textStyle: levelTitle),
+                          textAlign: TextAlign.start)
+                    ],
+                  )
+                ])),
+            for (var i in level)
+              Container(
+                  margin:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                  child: LevelcardWidget(level: i))
           ])),
-    );
+    ));
   }
 }
