@@ -29,7 +29,7 @@ class _LevelcardWidgetState extends State<LevelcardWidget> {
   Widget build(BuildContext context) {
     if (levelIsLocked) {
       return Container(
-          padding: EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 120),
+          padding: EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 0),
           decoration: BoxDecoration(
               color: white, borderRadius: BorderRadius.circular(25)),
           alignment: Alignment.centerLeft,
@@ -38,7 +38,10 @@ class _LevelcardWidgetState extends State<LevelcardWidget> {
               'Level ${widget.level} Flash Cards',
               style: GoogleFonts.poppins(textStyle: lockedLevelCardTitle),
             ),
-            Image.asset('lib/assets/images/lock_icon.png')
+            Container(
+              alignment: Alignment.bottomCenter,
+                margin: const EdgeInsets.symmetric(vertical: 60),
+                child: Image.asset('lib/assets/images/lock_icon.png'))
           ]));
     } else {
       return Container(

@@ -35,8 +35,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 margin: const EdgeInsets.only(left: 20, right: 20, top: 50),
                 child: Row(children: [
                   Padding(
-                    padding: EdgeInsets.only(right: 20),
-                    child: Image.asset('lib/assets/images/UserProfile.png')),
+                      padding: const EdgeInsets.only(right: 20),
+                      child: Image.asset('lib/assets/images/UserProfile.png')),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
