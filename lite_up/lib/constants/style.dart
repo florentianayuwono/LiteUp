@@ -11,6 +11,12 @@ const TextStyle unlockedLevelCardTitle =
 const TextStyle lockedLevelCardTitle =
     TextStyle(color: softOrange, fontSize: 24, fontWeight: FontWeight.bold);
 
+const TextStyle flashcardContentStyle =
+    TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold);
+
+const TextStyle flashcardPageStyle =
+    TextStyle(color: deepOrange, fontSize: 20, fontWeight: FontWeight.bold);
+
 const TextStyle loginButtonTextStyle =
     TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold);
 const TextStyle signUpButtonTextStyle =

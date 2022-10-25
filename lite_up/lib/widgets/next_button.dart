@@ -15,7 +15,8 @@ class NextButton extends StatelessWidget {
           decoration: BoxDecoration(
               color: deepOrange, borderRadius: BorderRadius.circular(10)),
           padding: const EdgeInsets.symmetric(vertical: 10),
-          child: const Text('Next Flashcard', textAlign: TextAlign.center)),
+          child: const Text('Next Flashcard',
+              style: loginButtonTextStyle, textAlign: TextAlign.center)),
     );
   }
 }

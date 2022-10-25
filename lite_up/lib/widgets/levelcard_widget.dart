@@ -34,10 +34,10 @@ class _LevelcardWidgetState extends State<LevelcardWidget> {
             const FlashcardScreen();
           },
           child: Container(
-              padding: EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 0),
+              padding: const EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 0),
               decoration: BoxDecoration(
                   color: white, borderRadius: BorderRadius.circular(25)),
-              alignment: Alignment.centerLeft,
+              alignment: Alignment.center,
               child: Stack(children: [
                 Text(
                   'Level ${widget.level} Flash Cards',

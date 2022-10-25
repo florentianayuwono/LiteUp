@@ -60,30 +60,30 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
           child: Column(
             children: [
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 5),
-                    child:
-                        Image.asset('lib/assets/images/currentTab_icon.png')),
-                for (var i = 0; i < flashcards.length - 1; i++)
-                  Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 5),
-                      child: Image.asset('lib/assets/images/nextTab_icon.png')),
+                for (var i = 0; i < flashcards.length; i++)
+                  if (i == index)
+                    Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 5),
+                        child: Image.asset(
+                            'lib/assets/images/currentTab_icon.png'))
+                  else
+                    Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 5),
+                        child:
+                            Image.asset('lib/assets/images/nextTab_icon.png')),
               ]),
               // Add the flashcard widget
               FlashcardWidget(
                 indexAction: index,
-                flashcardTitle: flashcards[index].title,
+                currentFlashcard: flashcards[index],
                 totalFlashcards: flashcards.length,
-              ),
-              const Divider(color: deepOrange),
-              // Add some space
-              const SizedBox(height: 25),
+              )
             ],
           )),
 
       // Next button
       floatingActionButton: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: NextButton(nextFlashcard: nextFlashcard),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
