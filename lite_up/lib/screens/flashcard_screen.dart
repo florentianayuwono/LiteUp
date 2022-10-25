@@ -20,8 +20,8 @@ class FlashcardScreen extends StatefulWidget {
 
 class _FlashcardScreenState extends State<FlashcardScreen> {
   List<Flashcard> flashcards = [
-    Flashcard(title: flashcards_1[0][0], content: flashcards_1[0][1]),
-    Flashcard(title: flashcards_1[1][0], content: flashcards_1[1][1])
+    for (var i = 0; i < flashcards_1.length; i++)
+      Flashcard(title: flashcards_1[i][0], content: flashcards_1[i][1])
   ];
 
   // Create an index to loop through flashcards
@@ -50,14 +50,25 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
           title: Text('Level 1 Flash Cards',
               style: GoogleFonts.poppins(textStyle: appBarTitle)),
           backgroundColor: white,
+          foregroundColor: Colors.black,
           elevation: 0),
 
       // Set the body of the app
       body: Container(
-          width: double.infinity,
-          padding: const EdgeInsets.symmetric(horizontal: 10),
+          decoration: primaryBackground,
+          alignment: Alignment.center,
           child: Column(
             children: [
+              Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    child:
+                        Image.asset('lib/assets/images/currentTab_icon.png')),
+                for (var i = 0; i < flashcards.length - 1; i++)
+                  Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 5),
+                      child: Image.asset('lib/assets/images/nextTab_icon.png')),
+              ]),
               // Add the flashcard widget
               FlashcardWidget(
                 indexAction: index,

@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('Name Holder',
+                      Text('Nama Pengguna',
                           style: GoogleFonts.poppins(textStyle: appBarTitle),
                           textAlign: TextAlign.left),
                       Text('Level 1',
