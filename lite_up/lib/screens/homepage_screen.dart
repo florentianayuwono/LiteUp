@@ -34,9 +34,9 @@ class _HomeScreenState extends State<HomeScreen> {
             Container(
                 margin: const EdgeInsets.only(left: 20, right: 20, top: 50),
                 child: Row(children: [
-                  const ImageIcon(
-                      AssetImage('lib/assets/images/LiteUp_logo.png'),
-                      size: 100),
+                  Padding(
+                    padding: EdgeInsets.only(right: 20),
+                    child: Image.asset('lib/assets/images/UserProfile.png')),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
