@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sound/flutter_sound.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:permission_handler/permission_handler.dart';
+import '../api/sound_recorder.dart';
 import '../constants/style.dart';
 import '../constants/text.dart';
 import '../models/flashcard_model.dart';
@@ -39,6 +42,8 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
     }
   }
 
+  final recorder = SoundRecorder();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,6 +82,14 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
                 indexAction: index,
                 currentFlashcard: flashcards[index],
                 totalFlashcards: flashcards.length,
+              ),
+              // Add the recorder button
+              Center(
+                child: ElevatedButton(
+                    child: Image.asset('lib/assets/images/recorder_icon.png'),
+                    onPressed: () async {
+                      
+                    }),
               )
             ],
           )),

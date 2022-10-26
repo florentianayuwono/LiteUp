@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_sound/public/flutter_sound_recorder.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../constants/style.dart';
 import '../models/flashcard_model.dart';
@@ -20,6 +21,7 @@ class FlashcardWidget extends StatefulWidget {
 }
 
 class _FlashcardWidgetState extends State<FlashcardWidget> {
+  
   @override
   Widget build(BuildContext context) {
     return Container(
