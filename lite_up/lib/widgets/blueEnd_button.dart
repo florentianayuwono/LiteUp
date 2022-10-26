@@ -6,23 +6,28 @@ import '../screens/homepage_screen.dart';
 import '../screens/personalisation_screen.dart';
 
 class BlueEndButton extends StatelessWidget {
-  const BlueEndButton({Key? key, required this.nextPage, required this.buttonText}) : super(key: key);
+  const BlueEndButton(
+      {Key? key,
+      required this.buttonText,
+      required this.pressed})
+      : super(key: key);
 
-  final StatefulWidget nextPage;
   final String buttonText;
+  final VoidCallback pressed;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
             primary: skyBlue,
-            padding: const EdgeInsets.symmetric(horizontal: 120, vertical: 15),
+            padding: const EdgeInsets.symmetric(horizontal: 120, vertical: 7),
             shape: const StadiumBorder()),
         onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => nextPage));
+          pressed;
         },
         child: Text(buttonText,
-            style: GoogleFonts.poppins(textStyle: loginButtonTextStyle)));
+            style: GoogleFonts.poppins(
+                textStyle:
+                    GoogleFonts.poppins(textStyle: endButtonTextStyle))));
   }
 }
