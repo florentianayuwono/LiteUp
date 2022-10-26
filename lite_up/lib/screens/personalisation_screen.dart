@@ -41,17 +41,17 @@ class _PersonalisationScreenState extends State<PersonalisationScreen> {
                     textAlign: TextAlign.center)),
             Container(
                 alignment: Alignment.centerLeft,
-                margin: const EdgeInsets.only(top: 30, left: 30),
+                margin: const EdgeInsets.only(top: 30, left: 30, bottom: 5),
                 child: Text(
                   'Tipe pembaca apakah kamu?',
                   style:
                       GoogleFonts.poppins(textStyle: personalisationTextstyle),
                 )),
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Wrap(alignment: WrapAlignment.center, children: [
               for (var text in personalisation_1)
                 Container(
                     margin:
-                        const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                        const EdgeInsets.symmetric(horizontal: 5, vertical: 3),
                     child: PersonalisationButton(buttonText: text))
             ]),
             Container(
@@ -68,7 +68,7 @@ class _PersonalisationScreenState extends State<PersonalisationScreen> {
                   for (var text in personalisation_2)
                     Container(
                         margin: const EdgeInsets.symmetric(
-                            horizontal: 5, vertical: 0),
+                            horizontal: 5, vertical: 3),
                         child: PersonalisationButton(buttonText: text))
                 ]),
             Container(

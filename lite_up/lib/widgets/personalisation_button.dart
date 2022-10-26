@@ -43,7 +43,8 @@ class _PersonalisationButtonState extends State<PersonalisationButton> {
         pressed();
       },
       style: ElevatedButton.styleFrom(
-        minimumSize: Size(100, 30), side: BorderSide(width: 1, color:deepYellow),
+          minimumSize: Size(100, 30),
+          side: BorderSide(width: 1, color: deepYellow),
           padding: const EdgeInsets.symmetric(horizontal: 20),
           elevation: 0,
           primary: primary,
@@ -52,8 +53,10 @@ class _PersonalisationButtonState extends State<PersonalisationButton> {
               color: textColor, fontSize: 13, fontWeight: FontWeight.w500)),
       child: Text(
         widget.buttonText,
-        style: GoogleFonts.poppins(textStyle: TextStyle(
-            color: textColor, fontSize: 13, fontWeight: FontWeight.w500)),
+        textAlign: TextAlign.center,
+        style: GoogleFonts.poppins(
+            textStyle: TextStyle(
+                color: textColor, fontSize: 13, fontWeight: FontWeight.w500)),
       ),
     );
   }
