@@ -12,8 +12,8 @@ class NextButton extends StatelessWidget {
       onTap: nextFlashcard,
       child: Container(
           width: double.infinity,
-          decoration: BoxDecoration(
-              color: deepOrange, borderRadius: BorderRadius.circular(10)),
+          decoration: const BoxDecoration(
+              color: deepOrange, borderRadius: BorderRadius.all(Radius.circular(40))),
           padding: const EdgeInsets.symmetric(vertical: 10),
           child: const Text('Next Flashcard',
               style: loginButtonTextStyle, textAlign: TextAlign.center)),
