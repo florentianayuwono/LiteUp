@@ -41,45 +41,41 @@ const flashcards_1 = [
 
 const quiz_1 = [
   [
-    "Who was the first president of Indonesia?",
-    "Soekarno",
-    "Moh. Hatta",
-    "Sayuti Melik"
+    "Bulan Inklusi Keuangan ada di bulan?",
+    ["Oktober", "Januari", "Maret"],
+    0
   ],
   [
-    "Apa topik utama pembahasan G20 tahun 2022?",
-    "Perubahan iklim",
-    "Inflasi dan perekonomian global",
-    "Kelestarian lingkungan"
+    "Sebuah kondisi dimana seseorang terlindungi secara finansial dari seluruh risiko adalah ...",
+    ["Financial Lock", "Financial Burden", "Financial Freedom"],
+    2
   ],
   [
-    "Apa topik utama pembahasan G20 tahun 2022?",
-    "Perubahan iklim",
-    "Inflasi dan perekonomian global",
-    "Kelestarian lingkungan"
+    "Kemampuan seseorang dalam memahami pentingnya perencanaan dan penerapan tata kelola keuangan yang baik adalah ...",
+    ["Kecerdasan finansial", "Kecerdasan belajar", "Kepintaran membaca"],
+    0
   ],
   [
-    "Apa topik utama pembahasan G20 tahun 2022?",
-    "Perubahan iklim",
-    "Inflasi dan perekonomian global",
-    "Kelestarian lingkungan"
+    "Kebijakan apa yang diluncurkan Kemenkumham RI menjelang puncak KTT G20?",
+    [
+      "Kebijakan visa rumah kedua",
+      "Kebijakan kewarganegaraan kedua",
+      "Kebijakan passport dua negara"
+    ],
+    0
   ],
   [
-    "Apa topik utama pembahasan G20 tahun 2022?",
-    "Perubahan iklim",
-    "Inflasi dan perekonomian global",
-    "Kelestarian lingkungan"
+    "Apa yang terjadi pada tanggal 17 - 24 Juni 1916 di alun-alun Bandung?",
+    [
+      "Kongres Serikat Islam",
+      "Inflasi dan perekonomian global",
+      "Kelestarian lingkungan"
+    ],
+    0
   ],
   [
-    "Apa topik utama pembahasan G20 tahun 2022?",
-    "Perubahan iklim",
-    "Inflasi dan perekonomian global",
-    "Kelestarian lingkungan"
-  ],
-  [
-    "Apa topik utama pembahasan G20 tahun 2022?",
-    "Perubahan iklim",
-    "Inflasi dan perekonomian global",
-    "Kelestarian lingkungan"
-  ],
+    "Jacques adalah karakter utama di buku?",
+    ["Laskar Pelangi", "Rumah Kaca", "Bumi Manusia"],
+    1
+  ]
 ];

@@ -50,3 +50,5 @@ const BoxDecoration primaryBackground = BoxDecoration(
 
 BoxDecoration unlockedCardBackground =
     BoxDecoration(color: softOrange, borderRadius: BorderRadius.circular(25));
+
+var mapNumberToLetter = {1: 'a', 2: 'b', 3: 'c'};

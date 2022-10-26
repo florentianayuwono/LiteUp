@@ -52,8 +52,8 @@ class _PersonalisationButtonState extends State<PersonalisationButton> {
               color: textColor, fontSize: 13, fontWeight: FontWeight.w500)),
       child: Text(
         widget.buttonText,
-        style: TextStyle(
-            color: textColor, fontSize: 13, fontWeight: FontWeight.w500),
+        style: GoogleFonts.poppins(textStyle: TextStyle(
+            color: textColor, fontSize: 13, fontWeight: FontWeight.w500)),
       ),
     );
   }

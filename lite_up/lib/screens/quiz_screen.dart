@@ -8,6 +8,7 @@ import 'package:permission_handler/permission_handler.dart';
 import '../api/sound_recorder.dart';
 import '../constants/style.dart';
 import '../constants/text.dart';
+import '../models/quiz_model.dart';
 import '../widgets/quiz_widget.dart';
 import '../widgets/next_button.dart';
 
@@ -24,36 +25,16 @@ class QuizScreen extends StatefulWidget {
 }
 
 class _QuizScreenState extends State<QuizScreen> {
-  List<String> Quizs = [
+  List<Quiz> Quizes = [
     for (var i = 0; i < quiz_1.length; i++)
-      "// Quiz(title: quiz_1[i][0], content: quiz_1[i][1])"
+      Quiz(
+          question: quiz_1[i][0] as String,
+          choices: quiz_1[i][1] as List<String>,
+          correctIndex: quiz_1[i][2] as int)
   ];
 
-  // Create an index to loop through Quizs
+  // Create an index to loop through Quizes
   int index = 0;
-
-  // Create a function to display the next Quiz
-  void nextQuiz() {
-    if (index == Quizs.length - 1) {
-      return;
-    } else {
-      setState(() {
-        // Increments the index to rebuild the app to show next Quiz
-        index++;
-      });
-    }
-  }
-
-  void previousQuiz() {
-    if (index == 0) {
-      return;
-    } else {
-      setState(() {
-        // Decrements the index to rebuild the app to show previous Quiz
-        index--;
-      });
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,10 +56,11 @@ class _QuizScreenState extends State<QuizScreen> {
               decoration: primaryBackground,
               alignment: Alignment.center,
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  for (var i = 0; i < Quizs.length; i++)
+                  for (var i = 0; i < Quizes.length; i++)
                     // Add the Quiz widget
-                    QuizWidget(level: index),
+                    QuizWidget(quiz: Quizes[i]),
                 ],
               ))),
     );

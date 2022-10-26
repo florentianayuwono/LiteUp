@@ -2,70 +2,78 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lite_up/screens/flashcard_screen.dart';
 import '../constants/style.dart';
+import '../models/quiz_model.dart';
 
 class QuizWidget extends StatefulWidget {
-  const QuizWidget({Key? key, required this.level}) : super(key: key);
+  const QuizWidget({Key? key, required this.quiz}) : super(key: key);
 
-  final int level;
+  final Quiz quiz;
 
   @override
   State<QuizWidget> createState() => _QuizWidgetState();
 }
 
 class _QuizWidgetState extends State<QuizWidget> {
-  bool levelIsLocked = false;
+  bool isPressed = false;
+  Color primary = white;
+  int choicePressed = -1;
 
-  // Create a function to display the unlocked level
-  void unlockLevel() {
-    if (levelIsLocked) {
+  void pressed(i) {
+    if (isPressed) {
       setState(() {
-        levelIsLocked = false;
+        isPressed = false;
+        primary = white;
       });
     } else {
-      return;
+      setState(() {
+        isPressed = true;
+        primary = deepYellow;
+        choicePressed = i;
+      });
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    if (levelIsLocked) {
-      return GestureDetector(
-          onTap: () {
-            const FlashcardScreen();
-          },
-          child: Container(
-              padding: const EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 0),
-              decoration: BoxDecoration(
-                  color: white, borderRadius: BorderRadius.circular(25)),
-              alignment: Alignment.center,
-              child: Stack(children: [
-                Text(
-                  'Level ${widget.level} Flash Cards',
-                  style: GoogleFonts.poppins(textStyle: personalisationTextstyle),
-                ),
+    return Container(
+        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+        color: Colors.transparent,
+        alignment: Alignment.centerLeft,
+        child:
+            Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+          Text(
+            widget.quiz.question,
+            textAlign: TextAlign.left,
+            style: GoogleFonts.poppins(textStyle: personalisationTextstyle),
+          ),
+          for (int i = 0; i < widget.quiz.choices.length; i++)
+            Row(
+              children: [
                 Container(
-                    alignment: Alignment.bottomCenter,
-                    margin: const EdgeInsets.symmetric(vertical: 60),
-                    child: Image.asset('lib/assets/images/lock_icon.png'))
-              ])));
-    } else {
-      return GestureDetector(
-          onTap: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const FlashcardScreen()));
-          },
-          child: Container(
-              padding:
-                  EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 120),
-              decoration: BoxDecoration(
-                  color: softOrange, borderRadius: BorderRadius.circular(25)),
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'Level ${widget.level} Flash Cards',
-                style: GoogleFonts.poppins(textStyle: personalisationTextstyle),
-              )));
-    }
+                    margin:
+                        const EdgeInsets.symmetric(vertical: 3, horizontal: 0),
+                    decoration: BoxDecoration(
+                        color: i == choicePressed ? primary : white,
+                        shape: BoxShape.circle,
+                        border: Border.all(color: deepYellow)),
+                    width: 35,
+                    height: 35,
+                    child: TextButton(
+                        onPressed: () {
+                          pressed(i);
+                        },
+                        child: Text(mapNumberToLetter[i + 1] as String,
+                            style: GoogleFonts.poppins(
+                                textStyle: personalisationTextstyle)))),
+                Container(
+                    alignment: Alignment.centerLeft,
+                    margin: const EdgeInsets.symmetric(
+                        vertical: 10, horizontal: 10),
+                    child: Text(widget.quiz.choices[i],
+                        style: GoogleFonts.poppins(
+                            textStyle: personalisationTextstyle)))
+              ],
+            )
+        ]));
   }
 }
