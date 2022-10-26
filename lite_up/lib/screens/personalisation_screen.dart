@@ -56,7 +56,7 @@ class _PersonalisationScreenState extends State<PersonalisationScreen> {
             ]),
             Container(
                 alignment: Alignment.centerLeft,
-                margin: const EdgeInsets.only(top: 10, left: 30),
+                margin: const EdgeInsets.only(top: 10, left: 30, bottom: 5),
                 child: Text(
                   'Genre apa yang kamu suka?',
                   style:
@@ -68,7 +68,7 @@ class _PersonalisationScreenState extends State<PersonalisationScreen> {
                   for (var text in personalisation_2)
                     Container(
                         margin: const EdgeInsets.symmetric(
-                            horizontal: 5, vertical: 2),
+                            horizontal: 5, vertical: 0),
                         child: PersonalisationButton(buttonText: text))
                 ]),
             Container(
