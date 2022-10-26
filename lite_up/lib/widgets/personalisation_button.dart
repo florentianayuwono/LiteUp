@@ -49,11 +49,11 @@ class _PersonalisationButtonState extends State<PersonalisationButton> {
           primary: primary,
           shape: const StadiumBorder(),
           textStyle: TextStyle(
-              color: textColor, fontSize: 13, fontWeight: FontWeight.normal)),
+              color: textColor, fontSize: 13, fontWeight: FontWeight.w500)),
       child: Text(
         widget.buttonText,
         style: TextStyle(
-            color: textColor, fontSize: 13, fontWeight: FontWeight.normal),
+            color: textColor, fontSize: 13, fontWeight: FontWeight.w500),
       ),
     );
   }

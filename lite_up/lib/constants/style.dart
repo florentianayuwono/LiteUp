@@ -23,7 +23,7 @@ const TextStyle signUpButtonTextStyle =
     TextStyle(color: deepOrange, fontSize: 16, fontWeight: FontWeight.bold);
 
 const TextStyle personalisationTextstyle =
-    TextStyle(color: grayish, fontSize: 13, fontWeight: FontWeight.normal);
+    TextStyle(color: grayish, fontSize: 13, fontWeight: FontWeight.w500);
 
 /* COLOR STYLE */
 const Color background = Color.fromARGB(255, 249, 240, 181);

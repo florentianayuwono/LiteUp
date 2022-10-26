@@ -1,6 +1,17 @@
 // This file contains list of static texts that will be displayed in the app.
 import 'package:flutter/material.dart';
 
+const personalisation_1 = ["beginner", "bookworm", "bibliophile"];
+
+const personalisation_2 = [
+  "fiksi",
+  "politik",
+  "literatur",
+  "sejarah",
+  "finansial",
+  "Saya masih mencari genre kesukaan"
+];
+
 const flashcards_1 = [
   [
     "Finansial",
@@ -28,13 +39,47 @@ const flashcards_1 = [
   ]
 ];
 
-const personalisation_1 = ["beginner", "bookworm", "bibliophile"];
-
-const personalisation_2 = [
-  "fiksi",
-  "politik",
-  "literatur",
-  "sejarah",
-  "finansial",
-  "Saya masih mencari genre kesukaan"
+const quiz_1 = [
+  [
+    "Who was the first president of Indonesia?",
+    "Soekarno",
+    "Moh. Hatta",
+    "Sayuti Melik"
+  ],
+  [
+    "Apa topik utama pembahasan G20 tahun 2022?",
+    "Perubahan iklim",
+    "Inflasi dan perekonomian global",
+    "Kelestarian lingkungan"
+  ],
+  [
+    "Apa topik utama pembahasan G20 tahun 2022?",
+    "Perubahan iklim",
+    "Inflasi dan perekonomian global",
+    "Kelestarian lingkungan"
+  ],
+  [
+    "Apa topik utama pembahasan G20 tahun 2022?",
+    "Perubahan iklim",
+    "Inflasi dan perekonomian global",
+    "Kelestarian lingkungan"
+  ],
+  [
+    "Apa topik utama pembahasan G20 tahun 2022?",
+    "Perubahan iklim",
+    "Inflasi dan perekonomian global",
+    "Kelestarian lingkungan"
+  ],
+  [
+    "Apa topik utama pembahasan G20 tahun 2022?",
+    "Perubahan iklim",
+    "Inflasi dan perekonomian global",
+    "Kelestarian lingkungan"
+  ],
+  [
+    "Apa topik utama pembahasan G20 tahun 2022?",
+    "Perubahan iklim",
+    "Inflasi dan perekonomian global",
+    "Kelestarian lingkungan"
+  ],
 ];
