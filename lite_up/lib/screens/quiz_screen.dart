@@ -32,44 +32,90 @@ class _QuizScreenState extends State<QuizScreen> {
       Quiz(
           question: quiz_1[i][0] as String,
           choices: quiz_1[i][1] as List<String>,
-          correctIndex: quiz_1[i][2] as int)
+          correctIndex: quiz_1[i][2] as int,
+          selectedIndex: -1)
   ];
 
-  // Create an index to loop through Quizes
-  int index = 0;
+  bool isSubmitted = false;
+
+  void submit() {
+    if (!isSubmitted) {
+      setState(() {
+        isSubmitted = true;
+      });
+    } else {
+      setState(() {
+        isSubmitted = true;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // Set background color
-      backgroundColor: background,
+    if (isSubmitted) {
+      return Scaffold(
+        // Set background color
+        backgroundColor: background,
 
-      // Set the top app bar
-      appBar: AppBar(
-          title: Text('Level 1 Quiz',
-              style: GoogleFonts.poppins(textStyle: appBarTitle)),
-          backgroundColor: white,
-          foregroundColor: Colors.black,
-          elevation: 0),
+        // Set the top app bar
+        appBar: AppBar(
+            title: Text('Level 1 Test',
+                style: GoogleFonts.poppins(textStyle: appBarTitle)),
+            backgroundColor: white,
+            foregroundColor: Colors.black,
+            elevation: 0),
 
-      // Set the body of the app
-      body: SingleChildScrollView(
-          child: Container(
-              decoration: primaryBackground,
-              alignment: Alignment.center,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  for (var i = 0; i < Quizes.length; i++)
-                    // Add the Quiz widget
-                    QuizWidget(quiz: Quizes[i]),
-                  Container(
-                      alignment: Alignment.center,
-                      margin: const EdgeInsets.symmetric(vertical: 20),
-                      child: const BlueEndButton(
-                          nextPage: HomeScreen(), buttonText: 'Kirim')),
-                ],
-              ))),
-    );
+        // Set the body of the app
+        body: SingleChildScrollView(
+            child: Container(
+                decoration: primaryBackground,
+                alignment: Alignment.center,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    for (var i = 0; i < Quizes.length; i++)
+                      // Add the Quiz widget
+                      QuizWidget(quiz: Quizes[i], showCorrectAnswer: true),
+                    Container(
+                        alignment: Alignment.center,
+                        margin: const EdgeInsets.symmetric(vertical: 20),
+                        child: BlueEndButton(
+                            buttonText: 'Statistik', pressed: submit)),
+                  ],
+                ))),
+      );
+    } else {
+      return Scaffold(
+        // Set background color
+        backgroundColor: background,
+
+        // Set the top app bar
+        appBar: AppBar(
+            title: Text('Level 1 Test',
+                style: GoogleFonts.poppins(textStyle: appBarTitle)),
+            backgroundColor: white,
+            foregroundColor: Colors.black,
+            elevation: 0),
+
+        // Set the body of the app
+        body: SingleChildScrollView(
+            child: Container(
+                decoration: primaryBackground,
+                alignment: Alignment.center,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    for (var i = 0; i < Quizes.length; i++)
+                      // Add the Quiz widget
+                      QuizWidget(quiz: Quizes[i], showCorrectAnswer: false),
+                    Container(
+                        alignment: Alignment.center,
+                        margin: const EdgeInsets.symmetric(vertical: 20),
+                        child: BlueEndButton(
+                            buttonText: 'Selesai', pressed: submit)),
+                  ],
+                ))),
+      );
+    }
   }
 }
