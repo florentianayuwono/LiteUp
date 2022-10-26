@@ -93,7 +93,7 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
                 children: [
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                     for (var i = 0; i < flashcards.length; i++)
-                      if (i == index)
+                      if (i <= index)
                         Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 5),
                             child: Image.asset(
