@@ -7,6 +7,8 @@ import '../constants/text.dart';
 import '../models/flashcard_model.dart';
 import '../widgets/flashcard_widget.dart';
 import '../widgets/next_button.dart';
+import '../widgets/personalisation_button.dart';
+import '../widgets/start_button.dart';
 import 'flashcard_screen.dart';
 
 /* 
@@ -45,12 +47,33 @@ class _PersonalisationScreenState extends State<PersonalisationScreen> {
                   style:
                       GoogleFonts.poppins(textStyle: personalisationTextstyle),
                 )),
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              for (var text in personalisation_1)
+                Container(
+                    margin:
+                        const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                    child: PersonalisationButton(buttonText: text))
+            ]),
             Container(
-                margin: const EdgeInsets.only(top: 20),
-                child: const LoginButton()),
+                alignment: Alignment.centerLeft,
+                margin: const EdgeInsets.only(top: 10, left: 30),
+                child: Text(
+                  'Genre apa yang kamu suka?',
+                  style:
+                      GoogleFonts.poppins(textStyle: personalisationTextstyle),
+                )),
+            Wrap(
+              alignment: WrapAlignment.center,
+                children: [
+                  for (var text in personalisation_2)
+                    Container(
+                        margin: const EdgeInsets.symmetric(
+                            horizontal: 5, vertical: 2),
+                        child: PersonalisationButton(buttonText: text))
+                ]),
             Container(
-                margin: const EdgeInsets.only(top: 20),
-                child: const SignUpButton())
+                margin: const EdgeInsets.only(top: 50),
+                child: const StartButton(buttonText: 'Masuk'))
           ])),
     ));
   }

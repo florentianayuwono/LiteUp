@@ -27,3 +27,14 @@ const flashcards_1 = [
     "Jacques Pangemanann yang merupakan seorang komisaris polisi Hindia Belanda berdarah Minahasa dalam memberantas kelompok Si Pitung membuatnya ditugaskan untuk memata-matai aktivitas Minke. Tugas inilah yang membuat Jacques Pangemanann menjadi sosok yang bertanggung jawab dibalik pembuangan Minke ke pulau terpencil di Maluku Utara.[2]"
   ]
 ];
+
+const personalisation_1 = ["beginner", "bookworm", "bibliophile"];
+
+const personalisation_2 = [
+  "fiksi",
+  "politik",
+  "literatur",
+  "sejarah",
+  "finansial",
+  "Saya masih mencari genre kesukaan"
+];

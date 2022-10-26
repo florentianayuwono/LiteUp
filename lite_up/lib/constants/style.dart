@@ -23,7 +23,7 @@ const TextStyle signUpButtonTextStyle =
     TextStyle(color: deepOrange, fontSize: 16, fontWeight: FontWeight.bold);
 
 const TextStyle personalisationTextstyle =
-    TextStyle(color: Colors.black, fontSize: 13, fontWeight: FontWeight.normal);
+    TextStyle(color: grayish, fontSize: 13, fontWeight: FontWeight.normal);
 
 /* COLOR STYLE */
 const Color background = Color.fromARGB(255, 249, 240, 181);
@@ -32,6 +32,8 @@ const Color softOrange = Color.fromARGB(255, 254, 189, 142);
 const Color deepYellow = Color.fromARGB(255, 255, 187, 1);
 const Color skyBlue = Color.fromARGB(255, 156, 197, 231);
 const Color white = Colors.white;
+const Color grayish = Color.fromARGB(255, 87, 87, 87);
+const Color lightGray = Color.fromARGB(255, 217, 217, 217);
 
 ButtonStyle loginButtonStyle = ButtonStyle(
     backgroundColor: MaterialStateProperty.all(deepOrange),
