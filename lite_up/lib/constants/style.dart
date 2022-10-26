@@ -22,6 +22,9 @@ const TextStyle loginButtonTextStyle =
 const TextStyle signUpButtonTextStyle =
     TextStyle(color: deepOrange, fontSize: 16, fontWeight: FontWeight.bold);
 
+const TextStyle personalisationTextstyle =
+    TextStyle(color: Colors.black, fontSize: 13, fontWeight: FontWeight.normal);
+
 /* COLOR STYLE */
 const Color background = Color.fromARGB(255, 249, 240, 181);
 const Color deepOrange = Color.fromARGB(255, 255, 123, 46);
