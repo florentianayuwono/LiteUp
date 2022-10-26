@@ -3,6 +3,7 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:flutter_sound/flutter_sound.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lite_up/widgets/blueEnd_button.dart';
 import 'package:lite_up/widgets/record_button.dart';
 import 'package:permission_handler/permission_handler.dart';
 import '../api/sound_recorder.dart';
@@ -11,6 +12,7 @@ import '../constants/text.dart';
 import '../models/quiz_model.dart';
 import '../widgets/quiz_widget.dart';
 import '../widgets/next_button.dart';
+import 'homepage_screen.dart';
 
 /* 
 QuizScreen widget is stateful because it is our parent widget and therefore
@@ -61,6 +63,11 @@ class _QuizScreenState extends State<QuizScreen> {
                   for (var i = 0; i < Quizes.length; i++)
                     // Add the Quiz widget
                     QuizWidget(quiz: Quizes[i]),
+                  Container(
+                      alignment: Alignment.center,
+                      margin: const EdgeInsets.symmetric(vertical: 20),
+                      child: const BlueEndButton(
+                          nextPage: HomeScreen(), buttonText: 'Kirim')),
                 ],
               ))),
     );
