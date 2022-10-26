@@ -3,7 +3,6 @@ import 'dart:ffi';
 import 'package:flutter/material.dart';
 import 'package:flutter_sound/flutter_sound.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:lite_up/screens/quiz_screen.dart';
 import 'package:lite_up/widgets/record_button.dart';
 import 'package:permission_handler/permission_handler.dart';
 import '../api/sound_recorder.dart';
@@ -37,8 +36,7 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
   // Create a function to display the next flashcard
   void nextFlashcard() {
     if (index == flashcards.length - 1) {
-      Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const QuizScreen()));
+      return;
     } else {
       setState(() {
         // Increments the index to rebuild the app to show next flashcard
@@ -95,7 +93,7 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
                 children: [
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                     for (var i = 0; i < flashcards.length; i++)
-                      if (i <= index)
+                      if (i == index)
                         Padding(
                             padding: const EdgeInsets.symmetric(horizontal: 5),
                             child: Image.asset(
@@ -108,22 +106,21 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
                   ]),
                   // Add the flashcard widget
                   FlashcardWidget(
-                      indexAction: index,
-                      currentFlashcard: flashcards[index],
-                      totalFlashcards: flashcards.length,
-                      nextFlashcard: nextFlashcard,
-                      previousFlashcard: previousFlashcard),
+                    indexAction: index,
+                    currentFlashcard: flashcards[index],
+                    totalFlashcards: flashcards.length,
+                    nextFlashcard: nextFlashcard,
+                    previousFlashcard: previousFlashcard
+                  ),
                   // Add the recorder and audio button
                   //Center(child: RecordButton(recorder: recorder))
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                     Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                         child:
                             Image.asset('lib/assets/images/recorder_icon.png')),
                     Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 10),
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                         child: Image.asset(
                             'lib/assets/images/audioPlayer_icon.png'))
                   ])

@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import '../constants/style.dart';
 import '../screens/flashcard_screen.dart';
 import '../screens/homepage_screen.dart';
-import '../screens/personalisation_screen.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({Key? key}) : super(key: key);
