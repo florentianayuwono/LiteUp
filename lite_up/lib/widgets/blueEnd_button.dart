@@ -5,21 +5,24 @@ import '../screens/flashcard_screen.dart';
 import '../screens/homepage_screen.dart';
 import '../screens/personalisation_screen.dart';
 
-class LoginButton extends StatelessWidget {
-  const LoginButton({Key? key}) : super(key: key);
+class BlueEndButton extends StatelessWidget {
+  const BlueEndButton({Key? key, required this.nextPage, required this.buttonText}) : super(key: key);
+
+  final StatefulWidget nextPage;
+  final String buttonText;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
-            primary: deepOrange,
+            primary: skyBlue,
             padding: const EdgeInsets.symmetric(horizontal: 120, vertical: 15),
             shape: const StadiumBorder()),
         onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const HomeScreen()));
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => nextPage));
         },
-        child: Text("Masuk",
-            style: GoogleFonts.montserrat(textStyle: loginButtonTextStyle)));
+        child: Text(buttonText,
+            style: GoogleFonts.poppins(textStyle: loginButtonTextStyle)));
   }
 }
