@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../constants/style.dart';
 import '../screens/flashcard_screen.dart';
 import '../screens/homepage_screen.dart';
+import '../screens/personalisation_screen.dart';
 
 class SignUpButton extends StatelessWidget {
   const SignUpButton({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class SignUpButton extends StatelessWidget {
             shape: const StadiumBorder()),
         onPressed: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const HomeScreen()));
+              MaterialPageRoute(builder: (context) => const PersonalisationScreen()));
         },
         child: Text("Daftar",
             style: GoogleFonts.montserrat(textStyle: signUpButtonTextStyle)));
