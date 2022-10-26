@@ -1,5 +1,11 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_sound/flutter_sound.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lite_up/widgets/record_button.dart';
+import 'package:permission_handler/permission_handler.dart';
+import '../api/sound_recorder.dart';
 import '../constants/style.dart';
 import '../constants/text.dart';
 import '../models/flashcard_model.dart';
@@ -20,8 +26,8 @@ class FlashcardScreen extends StatefulWidget {
 
 class _FlashcardScreenState extends State<FlashcardScreen> {
   List<Flashcard> flashcards = [
-    Flashcard(title: flashcards_1[0][0], content: flashcards_1[0][1]),
-    Flashcard(title: flashcards_1[1][0], content: flashcards_1[1][1])
+    for (var i = 0; i < flashcards_1.length; i++)
+      Flashcard(title: flashcards_1[i][0], content: flashcards_1[i][1])
   ];
 
   // Create an index to loop through flashcards
@@ -39,6 +45,31 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
     }
   }
 
+  void previousFlashcard() {
+    if (index == 0) {
+      return;
+    } else {
+      setState(() {
+        // Decrements the index to rebuild the app to show previous flashcard
+        index--;
+      });
+    }
+  }
+
+  final recorder = SoundRecorder();
+
+  @override
+  void initState() {
+    super.initState();
+    recorder.init();
+  }
+
+  @override
+  void dispose() {
+    recorder.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,32 +81,51 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
           title: Text('Level 1 Flash Cards',
               style: GoogleFonts.poppins(textStyle: appBarTitle)),
           backgroundColor: white,
+          foregroundColor: Colors.black,
           elevation: 0),
 
       // Set the body of the app
-      body: Container(
-          width: double.infinity,
-          padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Column(
-            children: [
-              // Add the flashcard widget
-              FlashcardWidget(
-                indexAction: index,
-                flashcardTitle: flashcards[index].title,
-                totalFlashcards: flashcards.length,
-              ),
-              const Divider(color: deepOrange),
-              // Add some space
-              const SizedBox(height: 25),
-            ],
-          )),
-
-      // Next button
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: NextButton(nextFlashcard: nextFlashcard),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      body: SingleChildScrollView(
+          child: Container(
+              decoration: primaryBackground,
+              alignment: Alignment.center,
+              child: Column(
+                children: [
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                    for (var i = 0; i < flashcards.length; i++)
+                      if (i == index)
+                        Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 5),
+                            child: Image.asset(
+                                'lib/assets/images/currentTab_icon.png'))
+                      else
+                        Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 5),
+                            child: Image.asset(
+                                'lib/assets/images/nextTab_icon.png')),
+                  ]),
+                  // Add the flashcard widget
+                  FlashcardWidget(
+                    indexAction: index,
+                    currentFlashcard: flashcards[index],
+                    totalFlashcards: flashcards.length,
+                    nextFlashcard: nextFlashcard,
+                    previousFlashcard: previousFlashcard
+                  ),
+                  // Add the recorder and audio button
+                  //Center(child: RecordButton(recorder: recorder))
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                    Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                        child:
+                            Image.asset('lib/assets/images/recorder_icon.png')),
+                    Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                        child: Image.asset(
+                            'lib/assets/images/audioPlayer_icon.png'))
+                  ])
+                ],
+              ))),
     );
   }
 }

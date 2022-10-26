@@ -6,8 +6,17 @@ import 'package:google_fonts/google_fonts.dart';
 const TextStyle appBarTitle =
     TextStyle(color: Colors.black, fontSize: 24, fontWeight: FontWeight.bold);
 const TextStyle levelTitle = TextStyle(color: Colors.black, fontSize: 20);
-const TextStyle levelCardTitle =
+const TextStyle unlockedLevelCardTitle =
     TextStyle(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold);
+const TextStyle lockedLevelCardTitle =
+    TextStyle(color: softOrange, fontSize: 24, fontWeight: FontWeight.bold);
+
+const TextStyle flashcardContentStyle =
+    TextStyle(color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold);
+
+const TextStyle flashcardPageStyle =
+    TextStyle(color: deepOrange, fontSize: 20, fontWeight: FontWeight.bold);
+
 const TextStyle loginButtonTextStyle =
     TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold);
 const TextStyle signUpButtonTextStyle =
