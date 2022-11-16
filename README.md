@@ -4,7 +4,7 @@
 
 Inspired by this question, LiteUp is built as a **FREE** application, for **EVERYONE** , to build up their reading habit and explore different genres through small motivating steps.
 
-   <img src="Ui.png" height="500px">
+   <img src="LiteUp.png" height="500px">
 
 ## How to Install
 
